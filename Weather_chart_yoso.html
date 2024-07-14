@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <style>
+      .slide {
+        display: none;
+      }
+      .active {
+        display: block;
+      }
+    </style>
+
+  <title>天気図 Ver2</title>
+    <link href="../css/Weather_chart_back.css" rel="stylesheet" type="text/css">   
+    
+  <script Language="JavaScript">
+    function openWin(str)
+    {
+      window.open(str,"Sample","width=1280,height=720");
+    }
+  </script>
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+  <div style="text-align: center">
+
+<p class="resizeimage"><span style="cursor:zoom-in;"><img class="slide active" src="https://www.sunny-spot.net/chart/week_press_01.jpg" alt="2日目"></span>
+<p class="resizeimage"><span style="cursor:zoom-in;"><img class="slide" src="https://www.sunny-spot.net/chart/week_press_02.jpg" alt="3日目"></span>
+<p class="resizeimage"><span style="cursor:zoom-in;"><img class="slide" src="https://www.sunny-spot.net/chart/week_press_03.jpg" alt="4日目"></span>
+<p class="resizeimage"><span style="cursor:zoom-in;"><img class="slide" src="https://www.sunny-spot.net/chart/week_press_04.jpg" alt="5日目"></span>
+<p class="resizeimage"><span style="cursor:zoom-in;"><img class="slide" src="https://www.sunny-spot.net/chart/week_press_05.jpg" alt="6日目"></span>
+<p class="resizeimage"><span style="cursor:zoom-in;"><img class="slide" src="https://www.sunny-spot.net/chart/week_press_06.jpg" alt="7日目"></span>
+<p class="resizeimage"><span style="cursor:zoom-in;"><img class="slide" src="https://www.sunny-spot.net/chart/week_press_07.jpg" alt="8日目"></span>
+<p class="resizeimage"><span style="cursor:zoom-in;"><img class="slide" src="https://www.sunny-spot.net/chart/week_press_08.jpg" alt="9日目"></span>
+<p class="resizeimage"><span style="cursor:zoom-in;"><img class="slide" src="https://www.sunny-spot.net/chart/week_press_09.jpg" alt="10日目"></span>
+<p class="resizeimage"><span style="cursor:zoom-in;"><img class="slide" src="https://www.sunny-spot.net/chart/week_press_10.jpg" alt="11日目"></span>
+                
+  </div>
+          
+  <script>
+    const slides = document.getElementsByClassName('slide');
+    let activeIndex = 0;
+
+    function changeSlide(index) {
+      slides[activeIndex].classList.remove('active');
+      activeIndex = index;
+      slides[activeIndex].classList.add('active');
+    }
+
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'ArrowLeft') {
+        const newIndex = activeIndex === 0 ? slides.length - 1 : activeIndex - 1;
+        changeSlide(newIndex);
+      } else if (event.key === 'ArrowRight') {
+        const newIndex = activeIndex === slides.length - 1 ? 0 : activeIndex + 1;
+        changeSlide(newIndex);
+      }
+    });
+  </script>
+</body>
+</html>
